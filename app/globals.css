@@ -1,102 +1,32 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
-@layer base {
-  :root {
-    /* Soft pastel background colors inspired by bakery theme */
-    --background: 35 40% 96%;
-    --foreground: 160 35% 25%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 160 35% 25%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 160 35% 25%;
-
-    /* Deep green primary color from pet training site */
-    --primary: 160 45% 35%;
-    --primary-foreground: 0 0% 98%;
-
-    /* Soft coral/peach secondary from bakery theme */
-    --secondary: 15 70% 80%;
-    --secondary-foreground: 160 35% 25%;
-
-    /* Soft cream muted colors */
-    --muted: 35 30% 92%;
-    --muted-foreground: 160 15% 45%;
-
-    /* Warm orange accent from pet training site */
-    --accent: 25 85% 60%;
-    --accent-foreground: 0 0% 98%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    /* Soft borders */
-    --border: 35 25% 88%;
-    --input: 35 25% 88%;
-    --ring: 160 45% 35%;
-
-    --radius: 1rem;
-
-    /* Sidebar with soft cream tones */
-    --sidebar-background: 35 35% 95%;
-    --sidebar-foreground: 160 35% 25%;
-    --sidebar-primary: 160 45% 35%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 35 30% 92%;
-    --sidebar-accent-foreground: 160 35% 25%;
-    --sidebar-border: 35 25% 88%;
-    --sidebar-ring: 160 45% 35%;
-  }
-
-  .dark {
-    --background: 160 30% 12%;
-    --foreground: 35 40% 96%;
-
-    --card: 160 25% 15%;
-    --card-foreground: 35 40% 96%;
-
-    --popover: 160 25% 15%;
-    --popover-foreground: 35 40% 96%;
-
-    --primary: 160 35% 45%;
-    --primary-foreground: 0 0% 98%;
-
-    --secondary: 15 40% 35%;
-    --secondary-foreground: 35 40% 96%;
-
-    --muted: 160 20% 20%;
-    --muted-foreground: 35 20% 70%;
-
-    --accent: 25 75% 55%;
-    --accent-foreground: 0 0% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 160 20% 25%;
-    --input: 160 20% 25%;
-    --ring: 160 35% 45%;
-    --sidebar-background: 160 25% 15%;
-    --sidebar-foreground: 35 40% 96%;
-    --sidebar-primary: 160 35% 45%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 160 20% 20%;
-    --sidebar-accent-foreground: 35 40% 96%;
-    --sidebar-border: 160 20% 25%;
-    --sidebar-ring: 160 35% 45%;
-  }
+@theme {
+  --color-*: initial;
+  --color-background: hsl(35 40% 96%);
+  --color-foreground: hsl(160 35% 25%);
+  --color-primary: hsl(160 45% 35%);
+  --color-primary-foreground: hsl(0 0% 98%);
+  --color-secondary: hsl(15 70% 80%);
+  --color-secondary-foreground: hsl(160 35% 25%);
+  --color-muted: hsl(35 30% 92%);
+  --color-muted-foreground: hsl(160 15% 45%);
+  --color-accent: hsl(25 85% 60%);
+  --color-accent-foreground: hsl(0 0% 98%);
+  --color-card: hsl(0 0% 100%);
+  --color-card-foreground: hsl(160 35% 25%);
+  --color-popover: hsl(0 0% 100%);
+  --color-popover-foreground: hsl(160 35% 25%);
+  --color-destructive: hsl(0 84.2% 60.2%);
+  --color-destructive-foreground: hsl(210 40% 98%);
+  --color-border: hsl(35 25% 88%);
+  --color-input: hsl(35 25% 88%);
+  --color-ring: hsl(160 45% 35%);
+  --radius: 1rem;
 }
 
 @layer base {
   * {
-    @apply border-border;
+    border-style: solid;
   }
 
   body {

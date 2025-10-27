@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MessageCircle, Heart } from "lucide-react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 interface PetCardProps {
   name: string;
@@ -15,7 +15,7 @@ interface PetCardProps {
 const PetCard = ({ name, breed, age, gender, emoji }: PetCardProps) => {
   return (
     <Card className="overflow-hidden hover:shadow-lg transition-shadow bg-card">
-      <div className="relative h-48 bg-gradient-to-br from-secondary/30 to-primary/20 flex items-center justify-center">
+      <div className="relative h-48 bg-linear-to-br from-secondary/30 to-primary/20 flex items-center justify-center">
         <span className="text-8xl">{emoji}</span>
         <Button
           size="icon"
@@ -34,7 +34,7 @@ const PetCard = ({ name, breed, age, gender, emoji }: PetCardProps) => {
         </div>
       </CardContent>
       <CardFooter className="p-4 pt-0 flex gap-2">
-        <Link to="/pets/1" className="flex-1">
+        <Link href="/pets/1" className="flex-1">
           <Button className="w-full bg-primary hover:bg-primary/90">
             Adopt Me
           </Button>

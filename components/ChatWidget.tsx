@@ -1,7 +1,13 @@
-" use client";
+"use client";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { MessageCircle, X, Send } from "lucide-react";
@@ -57,7 +63,11 @@ const ChatWidget = () => {
         className="fixed bottom-6 right-6 h-14 w-14 rounded-full shadow-lg bg-accent hover:bg-accent/90 z-50"
         onClick={() => setIsOpen(!isOpen)}
       >
-        {isOpen ? <X className="h-6 w-6" /> : <MessageCircle className="h-6 w-6" />}
+        {isOpen ? (
+          <X className="h-6 w-6" />
+        ) : (
+          <MessageCircle className="h-6 w-6" />
+        )}
       </Button>
 
       {/* Chat Window */}
@@ -69,14 +79,18 @@ const ChatWidget = () => {
               Chat with Shelter
             </CardTitle>
           </CardHeader>
-          
+
           <CardContent className="flex-1 p-0">
             <ScrollArea className="h-full p-4">
               <div className="space-y-4">
                 {messages.map((message) => (
                   <div
                     key={message.id}
-                    className={`flex ${message.sender === "user" ? "justify-end" : "justify-start"}`}
+                    className={`flex ${
+                      message.sender === "user"
+                        ? "justify-end"
+                        : "justify-start"
+                    }`}
                   >
                     <div
                       className={`max-w-[80%] rounded-2xl px-4 py-2 ${
@@ -108,7 +122,11 @@ const ChatWidget = () => {
                 onKeyPress={(e) => e.key === "Enter" && handleSend()}
                 className="flex-1"
               />
-              <Button size="icon" onClick={handleSend} className="bg-accent hover:bg-accent/90">
+              <Button
+                size="icon"
+                onClick={handleSend}
+                className="bg-accent hover:bg-accent/90"
+              >
                 <Send className="h-4 w-4" />
               </Button>
             </div>

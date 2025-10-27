@@ -1,45 +1,5 @@
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "../pages/Index";
-import Login from "../pages/Login";
-import Register from "../pages/Register";
-import Pets from "../pages/Pets";
-import PetDetail from "../pages/PetDetail";
-import Adopt from "../pages/Adopt";
-import Dashboard from "../pages/Dashboard";
-import About from "../pages/About";
-import Resources from "../pages/Resources";
-import Contact from "../pages/Contact";
-import NotFound from "../pages/NotFound";
+import Index from "@/pages/Index";
 
-const queryClient = new QueryClient();
-
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/pets" element={<Pets />} />
-          <Route path="/pets/:id" element={<PetDetail />} />
-          <Route path="/adopt" element={<Adopt />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/resources" element={<Resources />} />
-          <Route path="/contact" element={<Contact />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
-
-export default App;
+export default function Home() {
+  return <Index />;
+}

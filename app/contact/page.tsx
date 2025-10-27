@@ -1,10 +1,17 @@
+"use client";
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
@@ -29,11 +36,13 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      
+
       <section className="py-12 px-8 md:px-16 lg:px-24">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h1 className="text-5xl font-bold text-foreground mb-4">Get in Touch</h1>
+            <h1 className="text-5xl font-bold text-foreground mb-4">
+              Get in Touch
+            </h1>
             <p className="text-muted-foreground text-lg">
               Have questions? We&apos;d love to hear from you.
             </p>
@@ -43,7 +52,9 @@ const Contact = () => {
             <Card>
               <CardHeader>
                 <CardTitle>Send us a Message</CardTitle>
-                <CardDescription>Fill out the form and we&apos;ll respond within 24 hours</CardDescription>
+                <CardDescription>
+                  Fill out the form and we&apos;ll respond within 24 hours
+                </CardDescription>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-4">
@@ -53,7 +64,9 @@ const Contact = () => {
                       id="name"
                       required
                       value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, name: e.target.value })
+                      }
                     />
                   </div>
                   <div className="space-y-2">
@@ -63,7 +76,9 @@ const Contact = () => {
                       type="email"
                       required
                       value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, email: e.target.value })
+                      }
                     />
                   </div>
                   <div className="space-y-2">
@@ -72,7 +87,9 @@ const Contact = () => {
                       id="subject"
                       required
                       value={formData.subject}
-                      onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, subject: e.target.value })
+                      }
                     />
                   </div>
                   <div className="space-y-2">
@@ -82,10 +99,14 @@ const Contact = () => {
                       required
                       rows={5}
                       value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      onChange={(e) =>
+                        setFormData({ ...formData, message: e.target.value })
+                      }
                     />
                   </div>
-                  <Button type="submit" className="w-full">Send Message</Button>
+                  <Button type="submit" className="w-full">
+                    Send Message
+                  </Button>
                 </form>
               </CardContent>
             </Card>
@@ -99,7 +120,9 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold mb-1">Email</h3>
-                      <p className="text-muted-foreground">support@pawfectmatch.com</p>
+                      <p className="text-muted-foreground">
+                        support@pawfectmatch.com
+                      </p>
                     </div>
                   </div>
                 </CardContent>
@@ -128,7 +151,8 @@ const Contact = () => {
                     <div>
                       <h3 className="font-semibold mb-1">Office</h3>
                       <p className="text-muted-foreground">
-                        123 Pet Street<br />
+                        123 Pet Street
+                        <br />
                         New York, NY 10001
                       </p>
                     </div>
