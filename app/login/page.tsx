@@ -11,22 +11,23 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Link, useNavigate } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { toast } = useToast();
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
     toast({
       title: "Login Successful",
-      description: "Welcome back to PawfectMatch!",
+      description: "Welcome back to Zuffie!",
     });
-    navigate("/dashboard");
+    router.push("/dashboard");
   };
 
   return (
@@ -37,7 +38,7 @@ const Login = () => {
             <span className="text-6xl">🐾</span>
           </div>
           <CardTitle className="text-3xl">Welcome Back</CardTitle>
-          <CardDescription>Login to your PawfectMatch account</CardDescription>
+          <CardDescription>Login to your Zuffie account</CardDescription>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleLogin} className="space-y-4">
@@ -71,7 +72,7 @@ const Login = () => {
         <CardFooter className="flex flex-col gap-2">
           <p className="text-sm text-muted-foreground text-center">
             Don&apos;t have an account?{" "}
-            <Link to="/register" className="text-primary hover:underline">
+            <Link href="/register" className="text-primary hover:underline">
               Register here
             </Link>
           </p>
